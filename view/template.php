@@ -1,13 +1,13 @@
 <?php require 'header/menu.php'; ?>
 
-<br>
-<section>
+
+<section class="site-content">
     
     <?php 
         $mvc=new MVCcontroller();
-        echo 'invocando ';
+       // echo 'invocando ';
         $mvc->enlacesPaginasController();
-        echo 'paso';
+       // echo 'paso';
 	 ?>
 
 </section>

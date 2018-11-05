@@ -4,6 +4,7 @@ ob_start();
 //require_once 'model/restauranteModel/restauranteModel.php';
 class LoginController{
 
+   
     public function validarCredenciales(){
 
         $usuario = $_POST['username'];

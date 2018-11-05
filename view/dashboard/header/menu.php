@@ -26,7 +26,7 @@
 		<div class="side-nav">
 			<div class="logo">
 				<i class="fa fa-tachometer"></i>
-				<span>Dashboard</span>
+				<span>PIT PROJECT</span>
 			</div>
 			<nav>
 				<ul>
@@ -37,16 +37,16 @@
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="misproductos">
 
-							<span><i class="fa fa-envelope"></i></span>
+							<span><i class="fa fa-shopping-basket"></i></span>
 							<span>Productos</span>
 						</a>
 					</li>
 					<li class="active">
-						<a href="#">
-							<span><i class="fa fa-bar-chart"></i></span>
-							<span>Reportes</span>
+						<a href="nuevasolicitudes">
+							<span><i class="fa fa-folder-open"></i></span>
+							<span>Nuevas solicitudes</span>
 						</a>
 					</li>
 					<li>

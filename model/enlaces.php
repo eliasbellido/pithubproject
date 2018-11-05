@@ -15,11 +15,15 @@ class Paginas{
 			$module =  "view/modules/restaurantes/registrarRestaurante.php";
 		
         }
+        else if($enlaces =="restaurante"){
+            $module =  "view/modules/restaurantes/restaurante.php";
+
+        }
         
         //login
         else if($enlaces == "admin"){
             if(isset($_SESSION['userEmail'])){
-                $module = "view/dashboard/header/menu.php";
+                $module = "view/dashboard/modules/mirestaurante.php";
             }else{
 
                 //TODO: redirigir pagina donde indica que debe estar logueado
@@ -40,7 +44,10 @@ class Paginas{
 
         }
 
+
         //dashboard navegación
+
+
         else if($enlaces == "miRestaurante"){
             if(isset($_SESSION['userEmail'])){
 
@@ -49,12 +56,28 @@ class Paginas{
                 header('location:inicio');
             }
         }
+        else if($enlaces == "misproductos"){
+            if(isset($_SESSION['userEmail'])){
+
+                $module = "view/dashboard/modules/misproductos.php";
+                }else{
+                    header('location:inicio');
+                }
+        }
+        else if($enlaces == "nuevasolicitudes"){
+            if(isset($_SESSION['userEmail'])){
+
+                $module = "view/dashboard/modules/solicitudesnuevas.php";
+                }else{
+                    header('location:inicio');
+                }
+        }
 
 
         else{
 
             if(isset($_SESSION['userEmail'])){
-                $module = "view/dashboard/header/menu.php";
+                $module = "view/dashboard/modules/mirestaurante.php";
 
             }else{
                 $module = "view/modules/restaurantes/listarRestaurantes.php"; 

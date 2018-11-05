@@ -87,13 +87,19 @@
 												</div>
 
                                                 <br>
+                            
 
                                                 <div class="col-md-6">
                                                 <br>
-                                                <label>Calorias</label>
-                                                    <input type="text" data-skip-name="true" data-name="calorias[]" id="calor" class="form-control" />
+                                                    <div class="row-sm-1">
+                                                    <label>Calorias</label>
+                                                        <input type="text" data-skip-name="true" data-name="calorias[]" id="calor" class="form-control" />
+                                                    <label>Precio</label>
+                                                        <input type="text" data-skip-name="true" data-name="precio[]" id="pre" class="form-control" />
                                                                     
+                                                    </div>
                                                 </div>
+                                                
 											</div>
 										</div>
 									</div>

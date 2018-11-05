@@ -17,7 +17,7 @@
 <script src="/pitrestaurant/js/repeater.js" type="text/javascript"></script>
     </head>
     
-    <body>
+    <body class="site">
 
         <header>
             <div class="containerNav">

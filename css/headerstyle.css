@@ -6,6 +6,16 @@ body {
   background: #F0F8EA;
   font-family: 'Quicksand', sans-serif;
 }
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.site-content {
+  flex: 1;
+}
+
+
 
 .containerNav {
   width: 95%;
@@ -27,7 +37,14 @@ header::after {
 }
 
 footer {
-  float: bottom;
+  margin: 50px;
+}
+
+.containerPie{
+  background: #E54B4B;
+  border-radius: 5px; 
+  padding: 7px;
+  height: 140px;
 }
 
 .logo {

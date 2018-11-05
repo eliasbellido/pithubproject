@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
-body {
-  background: #F0F8EA;
-  font-family: 'Quicksand', sans-serif;
-}
 
 .modal-login {		
     color: #636363;
@@ -122,19 +118,20 @@ body {
   }
 
   /* Product Image */
-  .logoRestaurante {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: fill;
-  }
 
   .logoContainer{
     margin-right: 50px;
     border: 1px solid rgba(0,0,0,.12);
-
     width: 10.6rem;
     height: 10.6rem; 
   }
+
+  .logoRestaurante {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
   
   /* Product Description */
   .description {
@@ -175,9 +172,21 @@ body {
     font-weight: 300;
   }
   
-  button[class*=btn] {
-    /* width: 100px; */
-    height: 20px;
+  .total-price {
+    width: 83px;
+    padding-top: 10px;
+    padding-left: 160px;
+    margin-right: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 300;
+  }
+  
+  a[class*=btn] {
+    width: 100px; 
+    height: 30px;
+    
     background-color: #272b29;
     color: #fff;
     text-shadow: none;

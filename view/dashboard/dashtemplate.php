@@ -7,7 +7,7 @@
         $mvc=new MVCcontroller();
        // echo 'invocando ';
         $mvc->enlacesPaginasController();
-        echo 'paso';
+      //  echo 'paso';
 	 ?>
 
 </section>

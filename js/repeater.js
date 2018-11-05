@@ -52,8 +52,8 @@ jQuery.fn.extend({
 
         /* handle click and add items */
         addButton.on("click", function () {
-            //alert("kknero");
-            console.log("se agrego otro combo");
+            
+            //console.log("se agrego otro combo");
             key++;
             addItem(newItem, key);
         });

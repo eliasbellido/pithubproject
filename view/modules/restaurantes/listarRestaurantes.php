@@ -1,4 +1,4 @@
-<div class="shopping-cart"><br>
+<div class="shopping-cart">
       <div class="title">
         Restaurantes disponibles
       </div>

@@ -1,4 +1,4 @@
-<div class="container" style="background-color: #fff; border-radius: 5px; padding: 7px; margin-top:20px; width: 1140px; margin-left: 8.3%;">
+<div class="containerPie" >
 
         <footer>
                 <center>
