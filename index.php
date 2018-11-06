@@ -2,16 +2,17 @@
 
 session_start();
 
+    $dir = dirname(__FILE__);
 
-    require_once 'model/enlaces.php';
-    require_once 'model/restauranteModel/restauranteModel.php';
-    require_once 'model/restauranteModel/productoModel.php';
-    require_once 'model/loginModel/loginmodel.php';
+    require_once $dir.'/model/enlaces.php';
+    require_once $dir.'/model/restauranteModel/restauranteModel.php';
+    require_once $dir.'/model/restauranteModel/productoModel.php';
+    require_once $dir.'/model/loginModel/loginmodel.php';
     
-    require_once 'controller/mvcController/MVCcontroller.php';
-    require_once 'controller/restauranteController/restauranteController.php';
-    require_once 'controller/restauranteController/productoController.php';
-    require_once 'controller/loginController/loginController.php';
+    require_once $dir.'/controller/mvcController/MVCcontroller.php';
+    require_once $dir.'/controller/restauranteController/restauranteController.php';
+    require_once $dir.'/controller/restauranteController/productoController.php';
+    require_once $dir.'/controller/loginController/loginController.php';
     
     $index = new MVCcontroller();
 
