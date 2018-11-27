@@ -14,8 +14,10 @@ class LoginController{
 
         $rpta = LoginModel::validarCredenciales($datosController);
 
-        if($rpta == '1'){
+        if($rpta){
             $_SESSION['userEmail'] = $usuario;
+            $_SESSION['userTipo'] = $rpta['idtipo_usuario'];
+            $_SESSION['userRestId'] = $rpta['idrestaurante'];
             header('location:admin');
         }else{
             header('location:inicio');

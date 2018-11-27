@@ -17,13 +17,15 @@
                                 <label>Descripcion de restaurante</label>
 								<input type="text" name="descrestaurant" id="descripcion" class="form-control" />
                                 <label>Email</label>
-								<input type="text" name="email" id="email" class="form-control" />
+								<input type="email" name="email" id="email" class="form-control" required />
+                                <span id="availability"></span>
+                                
                                          
                                 <label>Tipo de restaurante</label>
                                 <?php             
                                     $consul = $db->query("SELECT * FROM tipo_restaurante order by tipo_restaurante asc");      
                                 ?>
-								<select type="text" name="idtipo_restaurante" id="tiporestaurant" class="form-control" >
+								<select type="text" name="idtipo_restaurante" id="tiporestaurant" class="form-control" required>
                                 <option value=""  required="" >Seleccione</option> 
                                     <?php foreach ($consul as $fila): ?>
                                         <option value="<?php echo $fila['idtipo_restaurante']?>"> 
@@ -38,7 +40,7 @@
                                 <?php             
                                     $consul = $db->query("SELECT * FROM distrito order by nomdistrito asc");      
                                 ?>
-								<select type="text" name="iddistrito" id="iddistrito" class="form-control" >
+								<select type="text" name="iddistrito" id="iddistrito" class="form-control" required>
                                 <option value=""  required="" >Seleccione</option> 
                                     <?php foreach ($consul as $fila): ?>
                                         <option value="<?php echo $fila['iddistrito']?>"> 
@@ -64,7 +66,7 @@
 													<?php             
                                                     $consul = $db->query("SELECT * FROM categoria order by nomcategoria asc");      
                                                     ?>
-                                                    <select class="form-control chosen-select" data-skip-name="true" data-name="idcategoria[]"id="idcategoria[]">
+                                                    <select class="form-control chosen-select" data-skip-name="true" data-name="idcategoria[]"id="idcategoria[]" required>
                                                     <option value=""  required="" >Seleccione</option> 
                                                         <?php foreach ($consul as $fila): ?>
                                                             <option value="<?php echo $fila['idcategoria']?>"> 
@@ -74,10 +76,10 @@
                                                     </select>
                                                     <br>
 													<label>Producto</label>
-                                                    <input type="text" data-skip-name="true" data-name="producto[]" id="producto" class="form-control" />
+                                                    <input type="text" data-skip-name="true" data-name="producto[]" id="producto" class="form-control" required/>
                                                     
                                                     <label> Imagen</label>
-                                                    <input type="file" data-skip-name="true" data-name="thumbnail[]" id="thumbnail" class="form-control" />
+                                                    <input type="file" data-skip-name="true" data-name="thumbnail[]" id="thumbnail" class="form-control" required />
                                                     
                                                     
 												</div>
@@ -93,9 +95,9 @@
                                                 <br>
                                                     <div class="row-sm-1">
                                                     <label>Calorias</label>
-                                                        <input type="text" data-skip-name="true" data-name="calorias[]" id="calor" class="form-control" />
+                                                        <input type="number" min=1 data-skip-name="true" data-name="calorias[]" id="calor" class="form-control" required/>
                                                     <label>Precio</label>
-                                                        <input type="text" data-skip-name="true" data-name="precio[]" id="pre" class="form-control" />
+                                                        <input type="number" min="0.01" step="0.01" max="2500" data-skip-name="true" data-name="precio[]" id="pre" class="form-control" required />
                                                                     
                                                     </div>
                                                 </div>
@@ -108,7 +110,7 @@
 							<div class="clearfix"></div>
 							<div class="form-group" align="center">
 								<br /><br />
-								<input type="submit" name="registrar_btn" class="btn btn-success" value="Registrar" />
+								<input type="submit" name="registrar_btn" id="btnregistrar"class="btn btn-success" value="Registrar" />
 							</div>
 
                                 <?php 
@@ -137,13 +139,42 @@
     $rest->registrarRestaurante();
     }
 ?>
-    
+
+
+
+
     <script>
-    $(document).ready(function(){
-
-        $("#repeater").createRepeater();
+        $(document).ready(function(){
 
 
-    });
-        
+
+
+            $('#email').blur(function(){
+
+            var username = $(this).val();
+
+            //alert("Handler for .blur() called."+username);
+
+            $.ajax({
+            url:'./util/checkEmail.php',
+            method:"POST",
+            data:{user_email:username},
+            success:function(data)
+            {
+            if(data ==1)
+            {
+                
+            $('#availability').html('<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Email ya existe</label><br>');
+            $('#btnregistrar').attr("disabled", true);
+            }
+            else
+            {
+            $('#availability').html('<label class="text-success"><span class="glyphicon glyphicon-ok"></span> Email Disponible</label><br>');
+            $('#btnregistrar').attr("disabled", false);
+            }
+            }
+            })
+
+            });
+            });  
     </script>

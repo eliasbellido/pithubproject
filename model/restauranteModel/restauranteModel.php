@@ -105,7 +105,7 @@ class RestauranteModel{
         try{
             $conexion->beginTransaction();
 
-            $query = "INSERT INTO restaurante (nomrestaurante, descripcionrestaurante, imagen, idtipo_restaurante, direccion, iddistrito, email, restaurante_fecharegistro, vigente) VALUES (:nomrestaurante,:descripcionrestaurante, :imagen, :idtipo_restaurante, :direccion, :iddistrito, :email, NOW(), :vigente)";
+            $query = "INSERT INTO restaurante (nomrestaurante, descripcionrestaurante, logorestaurante, idtipo_restaurante, direccion, iddistrito, email, restaurante_fecharegistro, vigente) VALUES (:nomrestaurante,:descripcionrestaurante, :imagen, :idtipo_restaurante, :direccion, :iddistrito, :email, NOW(), :vigente)";
 
             $stmt = $conexion->prepare($query);
 

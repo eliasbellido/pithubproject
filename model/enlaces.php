@@ -22,10 +22,12 @@ class Paginas{
         
         //login
         else if($enlaces == "admin"){
-            if(isset($_SESSION['userEmail'])){
+            if(isset($_SESSION['userEmail']) &&$_SESSION['userTipo']==2){
                 $module = "view/dashboard/modules/mirestaurante.php";
-            }else{
+            }else if (isset($_SESSION['userEmail']) &&$_SESSION['userTipo']==1){
 
+                $module = "view/dashboard/modules/solicitudesnuevas.php";
+            }else{
                 //TODO: redirigir pagina donde indica que debe estar logueado
                 //$module = "view/modules/restaurantes/listarRestaurantes.php";
                 header('location:inicio');
@@ -36,6 +38,7 @@ class Paginas{
              $_SESSION = array();
 
              unset($_SESSION['userEmail']); 
+             unset($_SESSION['userTipo']); 
              session_destroy();
            
              header('location:inicio');
@@ -68,6 +71,14 @@ class Paginas{
             if(isset($_SESSION['userEmail'])){
 
                 $module = "view/dashboard/modules/solicitudesnuevas.php";
+                }else{
+                    header('location:inicio');
+                }
+        }
+        else if($enlaces == "nuevospedidos"){
+            if(isset($_SESSION['userEmail'])){
+
+                $module = "view/dashboard/modules/nuevospedidos.php";
                 }else{
                     header('location:inicio');
                 }

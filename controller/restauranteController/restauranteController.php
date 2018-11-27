@@ -120,7 +120,7 @@ class RestauranteController{
         
 
                     <div class="logoContainer">
-                    <img src='.$row['imagen'].' alt="" class="logoRestaurante"/>
+                    <img src='.$row['logorestaurante'].' alt="" class="logoRestaurante"/>
                     </div>
 
                     <div class="description">
@@ -176,6 +176,7 @@ class RestauranteController{
      
   }
 
+  
   public function admitirRestaurante(){
 
    
@@ -221,7 +222,7 @@ class RestauranteController{
         <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email" value="'.$row['email'].'" disabled>
+          <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email" value="'.$row['email'].'/'.$_SESSION['userTipo'].'/'.$_SESSION['userRestId'].'" disabled>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Password</label>

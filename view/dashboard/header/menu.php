@@ -15,7 +15,41 @@
     
     
     <body>
-    
+    <?php if (isset($_SESSION['userTipo']) && $_SESSION['userTipo']==1 ): ?>
+		
+	<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>PITHUB</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>PIT PROJECT</span>
+			</div>
+			<nav>
+				<ul>
+					
+					<li class="active">
+						<a href="nuevasolicitudes">
+							<span><i class="fa fa-folder-open"></i></span>
+							<span>Nuevas solicitudes</span>
+						</a>
+					</li>
+					<li>
+						<a href="salir" >
+							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span>Cerrar sesión</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<?php else: ?>
+
 		<div class="header">
 			<div class="logo">
 				<i class="fa fa-tachometer"></i>
@@ -44,9 +78,9 @@
 						</a>
 					</li>
 					<li class="active">
-						<a href="nuevasolicitudes">
+						<a href="nuevospedidos">
 							<span><i class="fa fa-folder-open"></i></span>
-							<span>Nuevas solicitudes</span>
+							<span>Nuevos pedidos</span>
 						</a>
 					</li>
 					<li>
@@ -58,6 +92,10 @@
 				</ul>
 			</nav>
 		</div>
+
+		
+
+		<?php endif ?>
 
         
 

@@ -19,7 +19,7 @@
                     <?php             
                          $consul = $db->query("SELECT * FROM categoria order by nomcategoria asc");      
                     ?>
-                    <select class="form-control chosen-select" id="idcategoria" name="idcategoria[]">
+                    <select class="form-control chosen-select" id="idcategoria" name="idcategoria[]" required>
                                     <option value=""  required="" >Seleccione</option> 
                                             <?php foreach ($consul as $fila): ?>
                                                     <option value="<?php echo $fila['idcategoria']?>"> 
